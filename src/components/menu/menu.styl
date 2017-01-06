@@ -1,0 +1,35 @@
+.menu
+  .menu-list
+    position fixed
+    top 0
+    bottom 0
+    flex 0 0 200px
+    left -200px
+    width 200px
+    background-color #fff
+    color #313131
+    transition all .3s ease
+    z-index 99
+    &.show
+      transform translateX(200px)
+    .list-ul
+      margin 0 24px
+      border-top 1px solid #d4d4d4
+      overflow hidden
+      padding-top 9%
+      .item
+        display block
+        font-size 14px
+        padding 9% 0
+        text-align left
+        text-indent 1px
+        line-height 15px
+        color #313131
+        font-weight 700
+        &last-child
+          margin-bottom 50px
+        &before
+          color #2c3e50
+        .line
+          border-top 1px solid #d4d4d4
+

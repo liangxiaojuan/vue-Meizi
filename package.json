@@ -15,7 +15,8 @@
     "vue": "^2.1.0",
     "vue-lazyload": "^1.0.0-rc7",
     "vue-resource": "^1.0.3",
-    "vue-router": "^2.1.1"
+    "vue-router": "^2.1.1",
+    "vuex": "^2.1.1"
   },
   "devDependencies": {
     "stylus-loader": "^2.4.0",
