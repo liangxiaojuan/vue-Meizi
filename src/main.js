@@ -7,9 +7,19 @@ import VueRouter from 'vue-router';
 import Welfare from 'components/welfare/welfare.vue';
 import vueResource from 'vue-resource';
 import infiniteScroll from 'vue-infinite-scroll';
+import VueLazyload from 'vue-lazyload';
+import error from 'components/lazyloadImg/404.png';
+import loading from 'components/lazyloadImg/loading-spin.svg';
 Vue.use(infiniteScroll);
 Vue.use(VueRouter);
 Vue.use(vueResource);
+Vue.use(VueLazyload);
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: error,
+  loading: loading,
+  attempt: 1
+});
 let routes = [
   {path: '/', name: 'index', component: App, children: [{path: '/welfare', component: Welfare}]}
 ];

@@ -1,30 +1,32 @@
 <template>
-  <div class="welfare-wrapper">
-        <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+        <div class="welfare-wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="100">
         <div class="welfare-center">
           <figure v-for="aa in leftData">
-            <img :src="aa.url">
+           <v-img :imgUrl="aa.url"></v-img>
             <!--<figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>-->
           </figure>
         </div>
         <div class="welfare-center">
-          <figure v-for="aa in rightData">
-            <img :src="aa.url">
+          <figure v-for="bb in rightData">
+            <v-img :imgUrl="bb.url"></v-img>
             <!--<figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>-->
           </figure>
         </div>
       </div>
-
-  </div>
 </template>
-<script type="text/ecmascript-6">
+<script>
+import vImg from '../lazyloadimg/lazyimg.vue';
 export default {
     data() {
       return {
         leftData: [],
         rightData: [],
-        busy: false
+        busy: false,
+        page: 1
       };
+    },
+    components: {
+      vImg
     },
     created() {
       this.$http.get('https://gank.io/api/data/福利/10/1').then((response) => {
@@ -40,7 +42,7 @@ export default {
     },
     methods: {
       loadTop() {
-        this.$http.get('https://gank.io/api/data/福利/10/2').then((response) => {
+        this.$http.get(`https://gank.io/api/data/福利/10/${this.page}`).then((response) => {
           let left = response.body.results.filter((data, i) => {
             return (i + 1) % 2 === 1;
           });
@@ -56,6 +58,7 @@ export default {
         this.busy = true;
         console.log(1);
         this.loadTop();
+        this.page++;
       }
     }
   };

@@ -13,8 +13,8 @@
     "better-scroll": "^0.1.8",
     "stylus": "^0.54.5",
     "vue": "^2.1.0",
+    "vue-infinite-scroll": "^2.0.0",
     "vue-lazyload": "^1.0.0-rc7",
-    "vue-loadmore": "^2.0.0",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.1.1",
     "vuex": "^2.1.1"
