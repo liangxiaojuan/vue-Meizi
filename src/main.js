@@ -6,7 +6,8 @@ import store from './vuex/store';
 import VueRouter from 'vue-router';
 import Welfare from 'components/welfare/welfare.vue';
 import vueResource from 'vue-resource';
-
+import infiniteScroll from 'vue-infinite-scroll';
+Vue.use(infiniteScroll);
 Vue.use(VueRouter);
 Vue.use(vueResource);
 let routes = [
