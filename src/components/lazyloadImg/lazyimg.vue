@@ -3,8 +3,6 @@
        
 </template>
 <script>
-import error from './404.png';
-import loading from './loading-spin.svg';
 export default {
     name: 'v-img',
     props: {
@@ -15,10 +13,9 @@ export default {
     computed: {
     imgObj() {
         if (this.imgUrl) {
-            console.log(loading);
  return { src: this.imgUrl,
-    error: error,
-    loading: error};
+    error: 'error',
+    loading: 'loading'};
         }
   }
 }

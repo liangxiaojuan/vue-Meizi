@@ -2,7 +2,7 @@
   <div class="menu">
     <div class="menu-list" :class="{'show': show}">
       <div class="list-ul">
-        <router-link class="icon-quanbu iconfont item" to="/welfare" @click="updateHeader('welfare')">福利</router-link>
+        <router-link v-for='a in title' class="icon-quanbu iconfont item" to="/welfare" @click="updateHeader('welfare')">{{a}}</router-link>
       </div>
     </div>
     <div class="menu-other">
@@ -10,7 +10,9 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
+import {title} from '../../common/js/uz.js';
+console.log(title);
   export default
   {
     name: 'v-menu',
@@ -21,7 +23,8 @@
     },
     data() {
       return {
-        aa: this.$store.state.headerTitle
+        aa: this.$store.state.headerTitle,
+        title: title
       };
     },
     methods: {
