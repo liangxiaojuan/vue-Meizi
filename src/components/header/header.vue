@@ -4,7 +4,6 @@
     <header class="header" :class="{'show': show}" @click="isShow">
       <h1>{{headerTitle}}</h1>
     </header>
-
     <v-menu :show="show"></v-menu>
   </div>
 </template>

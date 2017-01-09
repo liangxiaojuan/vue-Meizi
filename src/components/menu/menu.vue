@@ -2,7 +2,7 @@
   <div class="menu">
     <div class="menu-list" :class="{'show': show}">
       <div class="list-ul">
-        <router-link v-for='a in title' class="icon-quanbu iconfont item" to="/welfare" @click="updateHeader('welfare')">{{a}}</router-link>
+        <router-link v-for='menu in menus' class="icon-quanbu iconfont item" :to="menu" @click="updateHeader(menu)">{{MENU_CONVERT[menu]}}</router-link>
       </div>
     </div>
     <div class="menu-other">
@@ -10,9 +10,9 @@
   </div>
 </template>
 
-<script>
-import {title} from '../../common/js/uz.js';
-console.log(title);
+<script type="text/ecmascript-6">
+  import {mapState} from 'vuex';
+  const MENU_CONVERT = {'welfare': '福利', 'day': '每日推荐'};
   export default
   {
     name: 'v-menu',
@@ -23,10 +23,14 @@ console.log(title);
     },
     data() {
       return {
-        aa: this.$store.state.headerTitle,
-        title: title
+        MENU_CONVERT: MENU_CONVERT
       };
     },
+    computed: {
+      ...mapState([
+        'menus'
+      ])
+  },
     methods: {
       updateHeader(title) {
         this.$store.commit('UPDATE_TITLE', title);

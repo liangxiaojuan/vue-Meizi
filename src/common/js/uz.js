@@ -1,10 +1,2 @@
-const titles = [
-  '福利',
-  'Android',
-  'iOS',
-  'all',
-  '前端',
-  '休息视频',
-  '拓展资源'];
-export {titles} ;
+export const NAME_TITILE = ['welfare', 'Android', 'iOS', 'day', 'welfare', 'welfare', 'welfare'];
 

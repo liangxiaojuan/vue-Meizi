@@ -13,6 +13,7 @@
     "better-scroll": "^0.1.8",
     "stylus": "^0.54.5",
     "vue": "^2.1.0",
+    "vue-awesome-swiper": "^2.2.9",
     "vue-infinite-scroll": "^2.0.0",
     "vue-lazyload": "^1.0.0-rc7",
     "vue-resource": "^1.0.3",
