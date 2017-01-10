@@ -21,7 +21,7 @@
       };
     },
     created() {
-      this.$http.get('http://gank.io/api/data/Android/10/1').then((response) => {
+      this.$http.get('http://gank.io/api/data/Android/20/10').then((response) => {
         this.data = this.data.concat(response.body.results);
       });
     },

@@ -1,6 +1,7 @@
 <template>
   <div class="card">
-    <img :src="data.images[0]" alt="" width="100%" height="100%">
+    <img  v-lazy="data.images?data.images[0]+'?imageView2/0/w/200':null" class="img">
+  
     <div class="card-content">
       <div class="desc">{{data.desc}}</div>
       <div class="card-content-bottom">
@@ -12,7 +13,7 @@
 
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   export default {
     name: 'v-card',
     props: {

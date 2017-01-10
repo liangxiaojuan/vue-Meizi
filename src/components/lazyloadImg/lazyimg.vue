@@ -13,7 +13,7 @@ export default {
     computed: {
     imgObj() {
         if (this.imgUrl) {
- return { src: this.imgUrl,
+ return { src: this.imgUrl + '?imageView2/0/w/100',
     error: 'error',
     loading: 'loading'};
         }
