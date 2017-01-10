@@ -5,7 +5,8 @@ import App from './App';
 import store from './vuex/store';
 import VueRouter from 'vue-router';
 import Welfare from 'components/welfare/welfare.vue';
-import Swiper from 'components/swiper/swiper1.vue';
+import Swiper from 'components/swiper/swiper.vue';
+import Ios from 'components/ios/ios.vue';
 import vueResource from 'vue-resource';
 import infiniteScroll from 'vue-infinite-scroll';
 import VueLazyload from 'vue-lazyload';
@@ -19,7 +20,7 @@ Vue.use(VueLazyload, {
   }
 );
 let routes = [
-  {path: '/', name: 'index', component: App, children: [{path: '/welfare', component: Welfare}, {path: '/day', component: Swiper}]}
+  {path: '/', name: 'index', component: App, children: [{path: '/welfare', component: Welfare}, {path: '/ios', component: Ios}, {path: '/day', component: Swiper}]}
 ];
 const router = new VueRouter({
   routes // （缩写）相当于 routes: routes

@@ -1,9 +1,9 @@
 <template>
   <swiper :options="swiperOption">
     <swiper-slide v-for="slide in swiperSlides">
-      <v-day></v-day>
+      <v-day :data="slide"></v-day>
     </swiper-slide>
-    <div class="swiper-pagination" slot="pagination">asdasdasdasdas</div>
+    <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 
 </template>
@@ -11,7 +11,7 @@
 <script type="text/ecmascript-6">
   import { swiper, swiperSlide } from 'vue-awesome-swiper';
   import vDay from '../day/day.vue';
-  const TAB_NAME = ['推荐', '排行榜'];
+  const TAB_NAME = ['今天', '昨天', '前天', '三天前', '四天前'];
   export default {
     name: 'v-swiper',
     components: {
@@ -19,8 +19,19 @@
       swiperSlide,
       vDay
     },
+    created() {
+      this.$http.get('http://gank.io/api/history/content/5/1').then((response) => {
+        this.swiperSlides = response.body.results;
+        response.body.results.forEach((result) => {
+//          TAB_NAME.push(result.created_at);
+//          this.TAB_NAME.push(result.created_at);
+        });
+      });
+    },
     data() {
       return {
+        swiperSlides: [],
+        TAB_NAME: [],
         playPageShow: false,
         blurBgShow: false,
         rankshow: true,
@@ -32,8 +43,7 @@
             return `<div class="${className} swiper-pagination-bullet-custom">${TAB_NAME[index]}</div>`;
             // return '<span class="' + className + ' swiper-pagination-bullet-custom' + '">' + (index + 1) + '</span>';
           }
-        },
-        swiperSlides: [1, 2, 3, 4, 5]
+        }
       };
     },
     mounted() {

@@ -1,7 +1,7 @@
 <template>
-  <div class="day">
-    <h1>{{content.title}}</h1>
-    <div v-html="content.content"></div>
+  <div class="day" rel="dom">
+    <h1>{{data.title}}</h1>
+    <div  v-html="data.content"></div>
   </div>
 
 </template>
@@ -10,12 +10,13 @@
   import vImg from '../lazyloadimg/lazyimg.vue';
   export default {
     name: 'v-day',
+    props: {
+      data: {
+        type: Object
+      }
+    },
     data() {
       return {
-        leftData: [],
-        rightData: [],
-        busy: false,
-        page: 1,
         content: false
       };
     },
@@ -23,42 +24,39 @@
       vImg
     },
     created() {
-      this.$http.get('http://gank.io/api/history/content/day/2017/01/05').then((response) => {
-        this.content = response.body.results[0];
+      this.$nextTick(() => {
+        var tags = document.body.getElementsByTagName('img');
+        for (let i = 0; i < tags.length; i++) {
+          tags[i].removeAttribute('style');
+        }
       });
     },
     methods: {
-      loadTop() {
-        this.$http.get(`https://gank.io/api/data/福利/10/${this.page}`).then((response) => {
-          let left = response.body.results.filter((data, i) => {
-            return (i + 1) % 2 === 1;
-          });
-          let right = response.body.results.filter((data, i) => {
-            return (i + 1) % 2 !== 1;
-          });
-          this.leftData = this.leftData.concat(left);
-          this.rightData = this.rightData.concat(right);
-          this.busy = false;
-        });
-      },
-      loadMore() {
-        this.busy = true;
-        console.log(1);
-        this.loadTop();
-        this.page++;
-      }
+
     }
   };
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
+  .day {
+    padding-top: 50px;
+  }
+  .day p{
+    font-size: 0;
+  }
   .day h1{
     text-align: left;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
+  .day h2{
+    display: none;
+  }
   .day p img {
-    width: auto;
+    width: 100%;
+  }
+  .day img {
+    width: 100%;
   }
   .day h3 {
     color: #000000;
@@ -75,15 +73,10 @@
     font-weight: 400;
   }
   .day ul li{
-  line-height: 20px;
+    line-height: 20px;
   }
-  .day p:nth-last-child(2) {
+  .day ul  img, .day p:nth-last-child(2), .day p:nth-last-child(1),
+  .day [target=_blank] img ,.day embed{
     display: none;
   }
-  .day p:nth-last-child(1) {
-    display: none;
-  }
- .day [target=_blank] img {
-   display: none;
- }
 </style>

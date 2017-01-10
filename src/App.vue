@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div >
     <vHeader></vHeader>
     <router-view></router-view>
   </div>
@@ -35,8 +35,8 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
+    width: 100%;
     margin-top: 60px;
   }
 

@@ -12,7 +12,7 @@
 
 <script type="text/ecmascript-6">
   import {mapState} from 'vuex';
-  const MENU_CONVERT = {'welfare': '福利', 'day': '每日推荐'};
+  const MENU_CONVERT = {'welfare': '福利', 'day': '每日推荐', 'ios': 'IOS'};
   export default
   {
     name: 'v-menu',
