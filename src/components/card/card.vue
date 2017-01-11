@@ -1,7 +1,6 @@
 <template>
   <div class="card">
     <img  v-lazy="data.images?data.images[0]+'?imageView2/0/w/200':null" class="img">
-  
     <div class="card-content">
       <div class="desc">{{data.desc}}</div>
       <div class="card-content-bottom">

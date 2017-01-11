@@ -2,7 +2,15 @@
   <div>
     <div class="page-cover" v-show="show" @click="isShow"></div>
     <header class="header" :class="{'show': show}" @click="isShow">
-      <h1>{{headerTitle}}</h1>
+      <header class="bar bar-nav">
+        <div class="pull-left">
+          <span class="iconfont icon-fenlei"></span>
+        </div>
+        <div class="title">{{headerTitle}}</div>
+        <div class="pull-right">
+          <span class="iconfont icon-sousuo_sousuo"></span>
+        </div>
+      </header>
     </header>
     <v-menu :show="show"></v-menu>
   </div>

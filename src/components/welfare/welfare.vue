@@ -9,7 +9,6 @@
         <div class="welfare-center">
           <figure v-for="bb in rightData">
             <v-img :imgUrl="bb.url"></v-img>
-            {{bb.desc}}
             <!--<figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>-->
           </figure>
         </div>

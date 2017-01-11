@@ -1,35 +1,90 @@
+@import "../../common/css/mixin.styl"
+
 .menu
   .menu-list
     position fixed
     top 0
     bottom 0
-    flex 0 0 200px
-    left -200px
-    width 200px
-    background-color #fff
+    flex 0 0 250px
+    left -250px
+    width 250px
+    background-color #22262a
     color #313131
     transition all .3s ease
     z-index 99
+    .menu-header
+      width 100%
+      height 180px
+      background-color #262d30
+      .menu-avatar
+        width 40%
+        height auto
+        border-radius 50%
+        margin 20px 70px
+      .menu-title
+        font-size 14px
+        color #ffffff
+        line-height 28px
+        font-weight 500
+        text-align center
     &.show
-      transform translateX(200px)
-    .list-ul
-      margin 0 24px
-      border-top 1px solid #d4d4d4
+      transform translateX(250px)
+    .menu-ul
+      margin 0
       overflow hidden
-      padding-top 9%
+      padding 0
       .item
         display block
         font-size 14px
-        padding 9% 0
+        padding 10px 13px
         text-align left
         text-indent 1px
         line-height 15px
-        color #313131
+        color #a6adb3
         font-weight 700
+        border-1px(#40474a);
         &last-child
           margin-bottom 50px
         &before
           color #2c3e50
         .line
           border-top 1px solid #d4d4d4
-
+        .menu-icon
+          display inline-block
+          width 30px
+          height 30px
+          background-color #383c40
+          border-radius 50%
+          vertical-align top
+          text-align center
+          .iconfont
+            color #999999
+            line-height 30px
+            font-weight 700
+        &.active
+          color #01aef3
+          .menu-icon
+            background-color #01aef3
+            .iconfont
+              color #ffffff
+        .menu-text
+          display inline-block
+          font-size 15px
+          line-height 32px
+          vertical-align top
+          margin-left 10px
+          font-weight 700
+        .menu-new
+          display inline-block
+          width 30px
+          height 30px
+          background-color #d81229
+          border-radius 50%
+          vertical-align top
+          text-align center
+          float right
+          span
+            color #ffffff
+            font-size 15px
+            line-height 30px
+            font-weight 500

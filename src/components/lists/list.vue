@@ -1,5 +1,5 @@
 <template>
-    <div class="list" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="100">
+  <div class="list" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="100">
     <v-card :data="o" v-for="o in data"></v-card>
   </div>
 
@@ -9,10 +9,10 @@
   import vCard from '../card/card.vue';
   export default
   {
-    name: 'v-ios',
+    name: 'v-list',
     props: {
-      show: {
-        type: Boolean
+      type: {
+        type: String
       }
     },
     data() {
@@ -30,7 +30,8 @@
     },
     methods: {
       loadTop() {
-        this.$http.get(`http://gank.io/api/data/Android/10/${this.page}`).then((response) => {
+        console.log(this.type);
+        this.$http.get(`http://gank.io/api/data/${this.type}/10/${this.page}`).then((response) => {
           this.data = this.data.concat(response.body.results);
           this.busy = false;
         });

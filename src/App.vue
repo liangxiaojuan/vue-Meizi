@@ -37,15 +37,11 @@
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     width: 100%;
-    margin-top: 60px;
+    padding-top: 50px;
   }
-
-
   #app .show {
-
-    transform: translateX(200px);
+    transform: translateX(250px);
   }
-
   #app .page-cover {
     position: fixed;
     top: 0;
