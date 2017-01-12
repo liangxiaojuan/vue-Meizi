@@ -7,13 +7,13 @@
         <div class="menu-title">YangYi && liangxiaojuan</div>
       </div>
       <div class="menu-ul">
-        <div v-for='menu in menus' @click="updateHeader(MENU_CONVERT[menu])">
+        <div v-for='menu in menus' @click="updateHeader(MENU_CONVERT[menu], menu)">
           <router-link class="icon-quanbu iconfont item border-1px" :to="menu">
             <div class="menu-icon">
               <i class="iconfont " :class="'icon-'+ menu"></i>
             </div>
             <span class="menu-text">{{MENU_CONVERT[menu]}}</span>
-            <div class="menu-new" v-show="menu ==='day'">
+            <div class="menu-new" v-show="menu ==='day' && news>0">
               <span>5</span>
             </div>
           </router-link>
@@ -44,14 +44,16 @@
       },
       computed: {
       ...mapState([
-        'menus'
+        'menus', 'news'
       ])
       },
       methods: {
-        updateHeader(title) {
-          console.log(title);
+        updateHeader(title, menu) {
           this.$store.commit('UPDATE_TITLE', title);
            this.$store.commit('UPDATE_MENUSHOW');
+           if (menu === 'day') {
+              this.$store.commit('UPDATE_NEWS');
+           }
         }
       }
     };
