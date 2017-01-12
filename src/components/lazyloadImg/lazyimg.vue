@@ -1,9 +1,9 @@
 <template>
-   <img v-lazy="imgObj" lazy="loading" class="bg-box"/>
-       
+  <img v-lazy="imgObj" lazy="loading" class="bg-box" />
+
 </template>
 <script>
-export default {
+  export default {
     name: 'v-img',
     props: {
       imgUrl: {
@@ -11,19 +11,15 @@ export default {
       }
     },
     computed: {
-    imgObj() {
+      imgObj() {
         if (this.imgUrl) {
- return { src: this.imgUrl + '?imageView2/0/w/100',
-    error: 'error',
-    loading: 'loading'};
+          return this.imgUrl + '?imageView2/0/w/100';
         }
-  }
-}
-};
+      }
+    }
+  };
 </script>
 <style>
-
-
 @-webkit-keyframes fadeIn {
 from {
     opacity: 0;
@@ -83,6 +79,4 @@ img[lazy=error] {
   animation-name: fadeIn;
    padding-bottom: 0px
 }
-
-
 </style>

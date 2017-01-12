@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="page-cover" v-show="show" @click="isShow"></div>
-    <header class="header" :class="{'show': show}" @click="isShow">
+    <div class="page-cover" v-show="menuShow" @click="isShow"></div>
+    <header class="header" :class="{'show': menuShow}" @click="isShow">
       <header class="bar bar-nav">
         <div class="pull-left">
           <span class="iconfont icon-fenlei"></span>
@@ -12,7 +12,7 @@
         </div>
       </header>
     </header>
-    <v-menu :show="show"></v-menu>
+    <v-menu :show="menuShow"></v-menu>
   </div>
 </template>
 
@@ -32,12 +32,12 @@
     },
     computed: {
       ...mapState([
-        'headerTitle'
+        'headerTitle', 'menuShow'
       ])
     },
     methods: {
       isShow() {
-        this.show = !this.show;
+       this.$store.commit('UPDATE_MENUSHOW');
       },
       hideDetail() {
         this.detailShow = false;

@@ -1,6 +1,8 @@
 <template>
   <div class="list" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="100">
-    <v-card :data="o" v-for="o in data"></v-card>
+      <a v-for="data in datas" :href="data.url " target="view_window">
+         <v-card :data="data" ></v-card>
+      </a>
   </div>
 
 </template>
@@ -17,23 +19,23 @@
     },
     data() {
       return {
-        data: [],
+        datas: [],
         page: 1,
         busy: false
       };
-    },
-    created() {
-      this.loadTop();
     },
     computed: {
 
     },
     methods: {
       loadTop() {
-        console.log(this.type);
+        this.$store.commit('UPDATE_LOADING', true);
         this.$http.get(`http://gank.io/api/data/${this.type}/10/${this.page}`).then((response) => {
-          this.data = this.data.concat(response.body.results);
+          this.datas = this.datas.concat(response.body.results);
           this.busy = false;
+          this.$nextTick(() => {
+          this.$store.commit('UPDATE_LOADING', false);
+        });
         });
       },
       loadMore() {

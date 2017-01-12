@@ -58,6 +58,15 @@ const routers = [{
       }
     }
   ]
+},
+{
+  path: '/wecome',
+  name: 'wecome',
+  component(resolve) {
+    require.ensure(['./components/wecome/wecome.vue'], () => {
+      resolve(require('./components/wecome/wecome.vue'));
+    });
+  }
 }];
 
 export default routers;

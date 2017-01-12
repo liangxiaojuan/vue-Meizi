@@ -8,7 +8,7 @@
 
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   import { swiper, swiperSlide } from 'vue-awesome-swiper';
   import vDay from '../day/day.vue';
   const TAB_NAME = ['今天', '昨天', '前天', '三天前', '四天前'];
@@ -20,11 +20,11 @@
       vDay
     },
     created() {
+      this.$store.commit('UPDATE_LOADING', true);
       this.$http.get('http://gank.io/api/history/content/5/1').then((response) => {
         this.swiperSlides = response.body.results;
-        response.body.results.forEach((result) => {
-//          TAB_NAME.push(result.created_at);
-//          this.TAB_NAME.push(result.created_at);
+        this.$nextTick(() => {
+          this.$store.commit('UPDATE_LOADING', false);
         });
       });
     },
@@ -41,17 +41,11 @@
           paginationClickable: true,
           paginationBulletRender(swiper, index, className) {
             return `<div class="${className} swiper-pagination-bullet-custom">${TAB_NAME[index]}</div>`;
-            // return '<span class="' + className + ' swiper-pagination-bullet-custom' + '">' + (index + 1) + '</span>';
           }
         }
       };
     },
     mounted() {
-//      setInterval(() => {
-//        console.log('simulate async data');
-//        let swiperSlides = this.swiperSlides;
-//        if (swiperSlides.length < 10) swiperSlides.push(swiperSlides.length + 1);
-//      }, 3000);
     }
   };
 </script>
@@ -79,7 +73,9 @@
   }
 
   .swiper-pagination-bullet-custom.swiper-pagination-bullet-active {
-    color: #000;
+    color: #03a9f4;
+    background: #03a9f4;
+    font-size: 20px
 
   }
 

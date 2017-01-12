@@ -10,13 +10,14 @@ import routes from './routers';
 import vueResource from 'vue-resource';
 import infiniteScroll from 'vue-infinite-scroll';
 import VueLazyload from 'vue-lazyload';
+import {loadFromlLocal} from './common/js/store';
 import 'common/css/index.styl';
 Vue.use(infiniteScroll);
 Vue.use(VueRouter);
 Vue.use(vueResource);
 Vue.use(VueLazyload, {
     error: require('./assets/404.png'),
-    loading: require('./assets/loading-spin.svg'),
+    loading: require('./assets/loading.gif'),
     attempt: 1
   }
 );
@@ -29,4 +30,8 @@ const routerApp = new Vue({
   store,
   router
 }).$mount('#app');
+
+if (!loadFromlLocal('gank', 'wecome', false)) {
+    router.push('/wecome');
+}
 export default routerApp;
