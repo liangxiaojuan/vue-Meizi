@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53c7fada-3b39-4629-ab7c-1abcf3ccc24f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Hello.vue" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/day/day.styl" afterPath="$PROJECT_DIR$/src/components/day/day.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/day/day.vue" afterPath="$PROJECT_DIR$/src/components/day/day.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/welfare/welfare.vue" afterPath="$PROJECT_DIR$/src/components/welfare/welfare.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routers.js" afterPath="$PROJECT_DIR$/src/routers.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/swiper/swiper.vue" afterPath="$PROJECT_DIR$/src/components/recommend/recommend.vue" />
     </list>
     <ignored path="gankmeizi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,8 +89,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9367816">
-              <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.62068963">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -806,8 +798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9367816">
-          <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.62068963">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>

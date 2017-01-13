@@ -27,15 +27,15 @@
 ###上图
 ***
 * 侧滑导航
-  ![1.gif](http://upload-images.jianshu.io/upload_images/4249223-5f3b13d8a460f340.gif?imageMogr2/auto-orient/strip)
+![1.gif](http://upload-images.jianshu.io/upload_images/4249223-5f3b13d8a460f340.gif?imageMogr2/auto-orient/strip)
 
 * 瀑布流布局，无限滚动，图片懒加载
 
 ![2.gif](http://upload-images.jianshu.io/upload_images/4249223-219e645475534a08.gif?imageMogr2/auto-orient/strip)
 
 * 左右滑动，左右切换
-
 ![3.gif](http://upload-images.jianshu.io/upload_images/4249223-81d898b9ac461048.gif?imageMogr2/auto-orient/strip)
+
 
 ###安装
 ***
