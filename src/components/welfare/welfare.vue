@@ -48,6 +48,7 @@
           this.leftData = this.leftData.concat(left);
           this.rightData = this.rightData.concat(right);
           this.busy = false;
+        // $nextTick() 在dom 重新渲染完后执行
           this.$nextTick(() => {
             this.$store.commit('UPDATE_LOADING', false);
           });
