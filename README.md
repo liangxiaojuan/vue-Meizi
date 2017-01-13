@@ -5,11 +5,15 @@
 ###首先
 
 ***
->  感谢[gank.io](http://gank.io/)提供的api接口
-喜欢的请点心，关注，star ,fork,这些是我坚持下去的动力
- demo地址 [demo](http://liangxiaojuan.github.io/meizi/index) （请用chrome的手机模式预览）
-本项目地址[github地址](https://github.com/liangxiaojuan/vue-Meizi)
-手机扫一扫
+>*  感谢[gank.io](http://gank.io/)提供的api接口
+
+*喜欢的请点心，关注，star ,fork,这些是我坚持下去的动力
+
+* demo地址 [demo](http://liangxiaojuan.github.io/meizi/index) （请用chrome的手机模式预览）
+
+*本项目地址[github地址](https://github.com/liangxiaojuan/vue-Meizi)
+
+*手机扫一扫
 
 ![项目二维码.png](http://upload-images.jianshu.io/upload_images/4249223-553d02ead2cb78fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
