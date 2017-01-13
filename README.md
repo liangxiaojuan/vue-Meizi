@@ -75,6 +75,11 @@ npm install -g vue-cli
 ```
 npm install -g eslint
 ```
+mac环境 安装依赖 friendly-errors-webpack-plugin
+
+```
+npm install friendly-errors-webpack-plugin --save-dev
+```
 ###目录结构
 ***
 <pre>
