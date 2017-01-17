@@ -75,7 +75,7 @@ npm install -g vue-cli
 ```
 npm install -g eslint
 ```
-mac环境 安装依赖 friendly-errors-webpack-plugin
+ 安装依赖 friendly-errors-webpack-plugin
 
 ```
 npm install friendly-errors-webpack-plugin --save-dev
@@ -117,6 +117,7 @@ npm install friendly-errors-webpack-plugin --save-dev
 
 ### 最后
 ***
-* 我的另外一个开源项目[饿了么app](https://github.com/liangxiaojuan/eleme)（已经star300+）
+* 我的另外一个开源项目[饿了么app](https://github.com/liangxiaojuan/eleme)（已经star400+）
 * 如果喜欢一定要 star哈!!!（谢谢!!）
 * 如果有意见和问题 请在 lssues提出，我会在线解答。
+* 我年后要离职了 对我感兴趣的可以联系我 [简历](https://github.com/liangxiaojuan/resume)
