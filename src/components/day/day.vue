@@ -28,21 +28,22 @@
     },
     methods: {
       clearStyle() {
-          this.$nextTick(() => {
-        var tags = this.$el.getElementsByTagName('img');
-        for (let i = 0; i < tags.length; i++) {
-          tags[i].removeAttribute('style');
-        }
-      });
+        this.$nextTick(() => {
+          var tags = this.$el.getElementsByTagName('img');
+          for (let i = 0; i < tags.length; i++) {
+            tags[i].removeAttribute('style');
+          }
+        });
       }
 
     }
   };
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-@import './day.styl';
+  @import './day.styl';
+
   .day ul img, .day h2, .day p:nth-last-child(2), .day p:nth-last-child(1),
-  .day [target=_blank] img ,.day embed{
+  .day [target=_blank] img, .day embed {
     display: none;
   }
 </style>
