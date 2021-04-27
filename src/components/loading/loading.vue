@@ -1,8 +1,8 @@
 <template>
     <div class="loading" v-show="show">
         <div class="loader-inner ball-pulse">
-            <div></div>
-            <div></div>
+            <div>123</div>
+            <div>132</div>
             <div></div>
         </div>
          </div>
